@@ -425,7 +425,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               <>
                 <div>
                   <Heading level="h1" className="text-ui-fg-base">
-                    Get start
+                    Get started
                   </Heading>
                   <Text>{getStartedText()}</Text>
                 </div>
