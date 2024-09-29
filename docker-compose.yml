@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  medusa:
+    build: .
+    ports:
+      - "9000:9000"
+    environment:
+      DATABASE_URL: postgres://postgres:medusa-db%@medusa1_medusa-db:5432/medusa1
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: medusa-db%
+      POSTGRES_DB: medusa1
+    ports:
+      - "5432:5432"
