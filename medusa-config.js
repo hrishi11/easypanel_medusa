@@ -56,6 +56,16 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: 'medusa-custom-attributes',
+    options: {
+      enableUI: true, // Enable the admin panel UI for managing attributes
+      projectConfig: {
+        store_cors: STORE_CORS, // Your store's CORS configuration
+        admin_cors: ADMIN_CORS, // Your admin panel's CORS configuration
+      },
+    },
+  },
 ];
 
 const modules = {
