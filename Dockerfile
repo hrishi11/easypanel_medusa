@@ -1,20 +1,8 @@
-# Dockerfile
-FROM node:14
-
-# Set working directory
-WORKDIR /app
-
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code
+FROM node:latest
+WORKDIR /app/medusa
 COPY . .
-
-# Expose the application port
-#EXPOSE 9000
-
-# Start the Medusa server
-CMD ["npm", "run", "develop"]
+RUN apt-get update && apt-get install -y python3 python3-pip python-is-python3
+RUN yarn global add @medusajs/medusa-cli
+RUN yarn
+RUN yarn build
+CMD medusa migrations run && yarn start
