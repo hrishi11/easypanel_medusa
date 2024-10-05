@@ -29,7 +29,11 @@ const ADMIN_CORS =
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 const DATABASE_URL =
+<<<<<<< HEAD
   process.env.DATABASE_URL || "postgres://postgres:medusadb@medusa1_medusa-db:5432/medusa1";
+=======
+  process.env.DATABASE_URL || "postgres://localhost/medusa-starter-default";
+>>>>>>> 3a8fa43 (Initial commit)
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
@@ -77,7 +81,11 @@ const projectConfig = {
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
+<<<<<<< HEAD
    redis_url: REDIS_URL
+=======
+  // redis_url: REDIS_URL
+>>>>>>> 3a8fa43 (Initial commit)
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */

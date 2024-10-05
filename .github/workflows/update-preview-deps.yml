@@ -1,5 +1,10 @@
 name: "Update Preview Dependencies (feat/v2)"
 on:
+<<<<<<< HEAD
+=======
+  schedule:
+    - cron: "15 */3 * * *" # every three hours
+>>>>>>> 3a8fa43 (Initial commit)
   workflow_dispatch:
 
 jobs:
@@ -66,4 +71,8 @@ jobs:
           base: "feat/v2"
           add-paths: yarn.lock
           committer: "GitHub <noreply@github.com>"
+<<<<<<< HEAD
           author: "GitHub <github-actions[bot]@users.noreply.github.com>"
+=======
+          author: "GitHub <github-actions[bot]@users.noreply.github.com>"
+>>>>>>> 3a8fa43 (Initial commit)
