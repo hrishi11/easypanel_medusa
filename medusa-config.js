@@ -29,9 +29,9 @@ const ADMIN_CORS =
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 const DATABASE_URL =
-  process.env.DATABASE_URL || "postgres://postgres:medusa-db%@medusa1_medusa-db:5432/medusa1";
+  process.env.DATABASE_URL || "postgres://localhost/medusa-starter-default";
 
-const REDIS_URL = process.env.REDIS_URL || "redis://default:redis_service@medusa1_redis_service:6379";
+const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
   `medusa-fulfillment-manual`,
@@ -50,31 +50,6 @@ const plugins = [
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
       },
-    },
-  },
-  {
-    resolve: 'medusa-custom-attributes',
-    options: {
-      enableUI: true, // Enable the admin panel UI for managing attributes
-      projectConfig: {
-        store_cors: STORE_CORS, // Your store's CORS configuration
-        admin_cors: ADMIN_CORS, // Your admin panel's CORS configuration
-      },
-    },
-  },
-  {
-    resolve: `medusa-file-s3`,
-    options: {
-        s3_url: process.env.S3_URL,
-        bucket: process.env.S3_BUCKET,
-        region: process.env.S3_REGION,
-        access_key_id: process.env.S3_ACCESS_KEY_ID,
-        secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
-        // optional
-        cache_control: process.env.S3_CACHE_CONTROL,
-        download_file_duration:
-          process.env.S3_DOWNLOAD_FILE_DURATION,
-        prefix: process.env.S3_PREFIX,
     },
   },
 ];
