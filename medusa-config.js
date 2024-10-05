@@ -54,6 +54,16 @@ const plugins = [
       develop: {
         open: process.env.OPEN_BROWSER !== "false",
       },
+    }, // Close the @medusajs/admin options here
+  },
+  {
+    resolve: 'medusa-custom-attributes',
+    options: {
+      enableUI: true, // Enable the admin panel UI for managing attributes
+      projectConfig: {
+        store_cors: STORE_CORS, // Your store's CORS configuration
+        admin_cors: ADMIN_CORS, // Your admin panel's CORS configuration
+      },
     },
   },
   {
@@ -92,10 +102,14 @@ const projectConfig = {
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
 <<<<<<< HEAD
+<<<<<<< HEAD
    redis_url: REDIS_URL
 =======
   // redis_url: REDIS_URL
 >>>>>>> 3a8fa43 (Initial commit)
+=======
+  redis_url: REDIS_URL
+>>>>>>> 340174b (Your commit message)
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
